@@ -20,7 +20,7 @@ public class IUserDaoTest {
 
     @Test
     public void testSelectUser() throws Exception {
-        String username = "渣渣辉";
+        String username = "zzh";
         String password = "123";
         User user = dao.login(username, password);
         System.out.println(user.getUsername());

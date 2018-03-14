@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
@@ -10,14 +11,31 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-    <!-- 扫描web相关的bean -->
+    <!-- 扫描web相关的bean
+        如果扫描到有Spring的相关注解的类，则把这些类注册为 Spring的bean-->
     <context:component-scan base-package="org.summary.controller"/>
 
     <!-- 开启SpringMVC注解模式 -->
-    <mvc:annotation-driven/>
+    <!-- 1.开启SpringMVC注解模式 -->
+    <!-- 简化配置：
+        (1)自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter
+        (2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat, xml,json默认读写支持
+    -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="org.summary.converter.StringToDateConverter"
+                      p:datePattern="yyyy-MM-dd"></bean>
+            </list>
+        </property>
+    </bean>
 
-    <!-- 静态资源默认servlet配置 -->
+    <!-- 静态资源默认servlet配置 请求转由Web应用服务器默认的Servlet处理，如果不是静态资源的请求，才由DispatcherServlet继续处理 -->
     <mvc:default-servlet-handler/>
+    <!--<bean name="/hello" class="org.summary.controller.HelloController"/>-->
+
 
     <!-- 配置jsp 显示ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -10,5 +10,5 @@ public interface IUserService {
 
     public User login(String username,String password);
 
-
+    public int signup(String username,String password);
 }

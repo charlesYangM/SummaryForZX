@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <display-name>ChatRobot</display-name>
-    <description>ChatRobot_Alpha_0.0.1</description>
+    <display-name>Summary</display-name>
+    <description>Summary_Alpha_0.0.1</description>
 
     <!-- 编码过滤器 -->
     <filter>
@@ -23,7 +23,7 @@
 
     <!-- 配置DispatcherServlet -->
     <servlet>
-        <servlet-name>SpringMVC</servlet-name>
+        <servlet-name>seckill-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!-- 配置springMVC需要加载的配置文件-->
         <init-param>
@@ -34,13 +34,13 @@
         <async-supported>true</async-supported>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SpringMVC</servlet-name>
+        <servlet-name>seckill-dispatcher</servlet-name>
         <!-- 匹配所有请求，此处也可以配置成 *.do 形式 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <selcome-file>index.jsp</selcome-file>
     </welcome-file-list>
 
 </web-app>

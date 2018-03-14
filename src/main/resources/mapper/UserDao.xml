@@ -9,7 +9,7 @@
     </select>
     <insert id="signup" >
         <!-- ignore 主键冲突，报错 -->
-        INSERT INTO user (username, password)
+        INSERT IGNORE INTO user (username, password)
         VALUES (#{username}, #{password})
     </insert>
 </mapper>

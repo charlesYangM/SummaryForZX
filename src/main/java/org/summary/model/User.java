@@ -4,7 +4,6 @@ package org.summary.model;
  * Created by CharlesYang on 2018/1/23.
  */
 
-import java.util.Date;
 
 public class User {
 

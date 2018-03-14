@@ -16,8 +16,16 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private IUserDao userDao;
 
+
     public User login(String username,String password) {
+
         return this.userDao.login(username,password);
+    }
+
+    @Override
+    public int signup(String username, String password) {
+
+        return this.userDao.signup(username,password);
     }
 
 }
