@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85fdddc4-b9ab-48cf-8e61-9e656e9bd637" name="Default" comment="test">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/org/summary/controller/UserController.class" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/org/summary/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/summary/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/org/summary/controller/UserController.class" />
+    <list default="true" id="85fdddc4-b9ab-48cf-8e61-9e656e9bd637" name="Default" comment="完成了对注册的验证 主要是使用json进行交互，且使用了自定义的的resutl泛型类作为返回信息">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Summary.iws" />
@@ -44,13 +42,8 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1049" column="14" selection-start-line="1049" selection-start-column="14" selection-end-line="1049" selection-end-column="14" />
-              <folding>
-                <marker date="1521000027909" expanded="true" signature="90803:90820" placeholder="..." />
-                <marker date="1521000027909" expanded="true" signature="90803:90838" placeholder="..." />
-                <marker date="1521000027909" expanded="true" signature="90803:90851" placeholder="..." />
-                <marker date="1521000027909" expanded="true" signature="90803:90866" placeholder="..." />
-              </folding>
+              <caret line="1034" column="14" selection-start-line="1034" selection-start-column="14" selection-end-line="1034" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,11 +110,9 @@
       <file leaf-file-name="BookController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/summary/controller/BookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8938053">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="1.2882096">
+              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,11 +152,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="charlesYangM &lt;qazwer1314123@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -1033,7 +1019,7 @@
       <workItem from="1517491119763" duration="1381000" />
       <workItem from="1520237512333" duration="7896000" />
       <workItem from="1520395404978" duration="59886000" />
-      <workItem from="1520905775121" duration="22131000" />
+      <workItem from="1520905775121" duration="20012000" />
     </task>
     <task id="LOCAL-00001" summary="完成了对注册的验证 主要是使用json进行交互，且使用了自定义的的resutl泛型类作为返回信息">
       <created>1520997449918</created>
@@ -1041,21 +1027,15 @@
       <option name="project" value="LOCAL" />
       <updated>1520997449918</updated>
     </task>
-    <task id="LOCAL-00002" summary="test">
-      <created>1520997790472</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1520997790472</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103108000" />
+    <option name="totallyTimeSpent" value="100989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-8" width="1862" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1074,8 +1054,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48685595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.723449" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3701367" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.723449" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37091675" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28818282" sideWeight="0.493007" order="0" side_tool="false" content_ui="combo" />
@@ -1140,9 +1120,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="完成了对注册的验证 主要是使用json进行交互，且使用了自定义的的resutl泛型类作为返回信息" />
-    <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了对注册的验证 主要是使用json进行交互，且使用了自定义的的resutl泛型类作为返回信息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1586,23 +1564,16 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1049" column="14" selection-start-line="1049" selection-start-column="14" selection-end-line="1049" selection-end-column="14" />
-          <folding>
-            <marker date="1521000027909" expanded="true" signature="90803:90820" placeholder="..." />
-            <marker date="1521000027909" expanded="true" signature="90803:90838" placeholder="..." />
-            <marker date="1521000027909" expanded="true" signature="90803:90851" placeholder="..." />
-            <marker date="1521000027909" expanded="true" signature="90803:90866" placeholder="..." />
-          </folding>
+          <caret line="1034" column="14" selection-start-line="1034" selection-start-column="14" selection-end-line="1034" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/summary/controller/BookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8938053">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="1.2882096">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
