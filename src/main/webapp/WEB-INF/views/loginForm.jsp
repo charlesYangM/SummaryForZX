@@ -10,21 +10,46 @@
 <head>
     <title></title>
 </head>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/json2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#login").click(function () {
+            $.ajax("${pageContext.request.contextPath}/user/login",
+                    {
+                        dataType: "json",
+                        type: "post",
+                        contentType: "application/json",
+                        data: JSON.stringify({username: $("#username").val(), password: $("#password").val()}),
+                        async: true,
+                        success: function (data) {
+                            $("#isLogin").html(data.data.username + " , " + data.data.stateInfo)
+                        },
+                        error: function () {
+                            alert("数据发送失败")
+                        }
+                    });
+        });
+    });
+</script>
 <body>
-<form action="login" method="post">
-    <table>
-        <tr>
-            <td><label>登录名：</label></td>
-            <td><input type="text" id="username" name="username"></td>
-        </tr>
-        <tr>
-            <td><label>密码：</label></td>
-            <td><input type="password" id="password" name="password"></td>
-        </tr>
-        <tr>
-            <td><input id="submit" type="submit" value="登录"></td>
-        </tr>
-    </table>
-</form>
+<span><label id="isLogin"></label> </span>
+<table>
+    <tr>
+        <td><label>登录名：</label></td>
+        <td><input type="text" id="username" name="username"></td>
+    </tr>
+    <tr>
+        <td><label>密码：</label></td>
+        <td><input type="password" id="password" name="password"></td>
+    </tr>
+    <tr>
+        <td><button type="button" id="login">登录</button></td>
+        <td><a href="${pageContext.request.contextPath}/user/register">
+            <button>转去注册</button>
+        </a></td>
+    </tr>
+</table>
 </body>
 </html>

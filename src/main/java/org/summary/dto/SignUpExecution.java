@@ -15,7 +15,7 @@ public class SignUpExecution {
     // 注册状态
     private String stateInfo;
 
-    // 预约成功对象
+    // 用户对象
     private User user;
 
     public SignUpExecution(String usename,SignUpEnum signUpEnum){

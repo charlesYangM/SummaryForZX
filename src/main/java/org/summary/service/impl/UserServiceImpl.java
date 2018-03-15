@@ -28,4 +28,9 @@ public class UserServiceImpl implements IUserService {
         return this.userDao.signup(username,password);
     }
 
+    @Override
+    public User getByUsername(String username) {
+        return this.userDao.getByUsername(username);
+    }
+
 }

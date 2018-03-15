@@ -24,4 +24,10 @@ public interface IUserDao {
     int signup(@Param("username")String username,@Param("password")String password);
 
 
+    /**
+     * 根据用户名获取信息
+     * @param username
+     * @return
+     */
+     User getByUsername(@Param("username")String username);
 }

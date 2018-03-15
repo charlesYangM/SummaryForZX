@@ -7,6 +7,11 @@
     <select id="login" resultType="User">
         SELECT * FROM user WHERE username = #{username}  and password = #{password}
     </select>
+
+    <select id="getByUsername" resultType="User">
+        SELECT * FROM user WHERE username = #{username}
+    </select>
+
     <insert id="signup" >
         <!-- ignore 主键冲突，报错 -->
         INSERT IGNORE INTO user (username, password)

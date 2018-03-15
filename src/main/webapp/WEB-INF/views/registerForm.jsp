@@ -50,6 +50,9 @@
         <td>
             <button type="button" id="regiter_confirm">确认注册</button>
         </td>
+        <td><a href="${pageContext.request.contextPath}/user/login">
+            <button>转去登录</button>
+        </a></td>
     </tr>
 </table>
 

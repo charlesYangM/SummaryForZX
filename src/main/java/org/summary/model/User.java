@@ -10,6 +10,16 @@ public class User {
     private String password;
     private String username;
 
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    private String salt;
+
 
     public String getPassword() {
         return password;
