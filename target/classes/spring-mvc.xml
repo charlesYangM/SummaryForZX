@@ -48,15 +48,71 @@
     <bean id="myRealm" class="org.summary.shiro.realm.MyRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
-                <property name="hashAlgorithmName" value="MD5"/> <!-- 加密算法的名称 -->
-                <property name="hashIterations" value="1024"/> <!-- 配置加密的次数 -->
+                <property name="hashAlgorithmName" value="MD5"/>
+                <!-- 加密算法的名称 -->
+                <property name="hashIterations" value="1024"/>
+                <!-- 配置加密的次数 -->
             </bean>
         </property>
+        <property name="cachingEnabled" value="true"/>
+        <property name="authenticationCachingEnabled" value="true"/>
+        <property name="authenticationCacheName" value="authenticationCache"/>
+        <property name="authorizationCachingEnabled" value="true"/>
+        <property name="authorizationCacheName" value="authorizationCache"/>
+    </bean>
+
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <!-- session的失效时长，单位毫秒 -->
+        <property name="globalSessionTimeout" value="600000"/>
+        <!-- 删除失效的session -->
+        <property name="deleteInvalidSessions" value="true"/>
+        <property name="sessionValidationSchedulerEnabled" value="true"/>
+        <property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>
+        <property name="sessionDAO" ref="sessionDAO"/>
+        <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="sessionIdCookie" ref="sessionIdCookie"/>
+        <property name ="sessionListeners">
+            <list>
+                <ref bean="shiroSessionListener"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="shiroSessionListener" class="org.summary.shiro.session.SessionListener1"></bean>
+    <!-- 会话DAO -->
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+        <property name="activeSessionsCacheName" value="activeSessionCache"/>
+        <property name="cacheManager" ref="shiroEhcacheManager"/>
+        <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
+    </bean>
+
+
+    <!-- 会话ID生成器  -->
+    <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
+    <!-- 会话验证调度器 -->
+    <bean id="sessionValidationScheduler" class="org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler">
+        <property name="interval"  value="1800000"/><!-- 单位MS-->
+        <property name="sessionManager" ref="sessionManager"/>
+    </bean>
+    <!-- shiro的缓存管理器，然后需要将缓存管理器注入到安全管理其中  -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <!--classpath是缓存属性的配置文件  -->
+        <property name="cacheManagerConfigFile" value="classpath:shiro/ehcache-shiro.xml"/>
+    </bean>
+
+    <!-- 会话Cookie模板 -->
+    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg name="name"  value="WEBSID"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="1800"/><!-- 单位S-->
     </bean>
 
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
+        <property name="cacheManager" ref="shiroEhcacheManager"/>
+        <!-- 注入session管理器 -->
+        <property name="sessionManager" ref="sessionManager"/>
     </bean>
 
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
@@ -73,7 +129,7 @@
         <!-- Shiro的核心安全接口,这个属性是必须的 -->
         <property name="securityManager" ref="securityManager"/>
         <!-- 身份认证失败，则跳转到登录页面的配置 -->
-        <property name="loginUrl" value="/user/login.jsp"/>
+        <property name="loginUrl" value="/user/login"/>
         <!-- 权限认证失败，则跳转到指定页面 -->
         <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
         <!-- Shiro连接约束配置,即过滤链的定义 -->
@@ -81,6 +137,7 @@
             <value>
                 /user/login=anon
                 /user/register=anon
+                /user/edit_summay=authc
                 <!--/user/student*/**=roles[teacher]-->
                 <!--/user/teacher*/**=perms["user:create"]-->
             </value>

@@ -5,7 +5,6 @@ package org.summary.service;
  */
 
 import org.summary.model.User;
-import org.summary.exception.SignUpException;
 
 public interface IUserService {
 

@@ -24,7 +24,9 @@
                         data: JSON.stringify({username: $("#username").val(), password: $("#password").val()}),
                         async: true,
                         success: function (data) {
+
                             $("#isLogin").html(data.data.username + " , " + data.data.stateInfo)
+                            $("#edit_button").show(200);
                         },
                         error: function () {
                             alert("数据发送失败")
@@ -48,6 +50,12 @@
         <td><button type="button" id="login">登录</button></td>
         <td><a href="${pageContext.request.contextPath}/user/register">
             <button>转去注册</button>
+        </a></td>
+    </tr>
+
+    <tr id="edit_button" style="display:none;">
+        <td><a href="${pageContext.request.contextPath}/user/edit_summay">
+            <button>编写总结</button>
         </a></td>
     </tr>
 </table>

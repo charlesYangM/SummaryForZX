@@ -1,11 +1,13 @@
 package org.summary.model;
 
+import java.io.Serializable;
+
 /**
  * Created by CharlesYang on 2018/1/23.
  */
 
 
-public class User {
+public class User implements Serializable{
 
     private String password;
     private String username;

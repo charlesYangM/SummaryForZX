@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 设置为ISummaryDao接口方法提供sql语句配置 -->
+<mapper namespace="org.summary.dao.ISummaryDao">
+    <insert id="saveSummary" parameterType="Summary">
+        INSERT IGNORE INTO summary (username, workContent, questions, solution, saveDay)
+        VALUES (#{user.username}, #{workContent}, #{questions}, #{solution}, #{saveDay,jdbcType=DATE})
+    </insert>
+
+    <select id="getUserSummaryByDate" resultType="Summary">
+        SELECT * FROM summary WHERE username = #{user.username} and saveDay = #{saveDay,jdbcType=DATE}
+    </select>
+</mapper>
