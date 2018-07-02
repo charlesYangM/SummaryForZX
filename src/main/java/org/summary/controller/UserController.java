@@ -12,27 +12,19 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.summary.dto.LoginExecution;
 import org.summary.dto.Result;
 import org.summary.dto.SignUpExecution;
 import org.summary.enums.LoginEnum;
 import org.summary.enums.SignUpEnum;
-
-import org.summary.exception.NoUserException;
 import org.summary.model.User;
 import org.summary.service.IUserService;
-
-import org.springframework.stereotype.Controller;
 import org.summary.shiro.helper.PasswordHelper;
-
 
 import java.io.IOException;
 import java.net.URLDecoder;
-import java.util.ArrayList;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/user")

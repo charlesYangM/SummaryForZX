@@ -33,7 +33,7 @@
     </bean>
 
     <!-- 静态资源默认servlet配置 请求转由Web应用服务器默认的Servlet处理，如果不是静态资源的请求，才由DispatcherServlet继续处理 -->
-    <mvc:default-servlet-handler/>
+    <mvc:default-servlet-handler/>u
     <!--<bean name="/hello" class="org.summary.controller.HelloController"/>-->
 
 
