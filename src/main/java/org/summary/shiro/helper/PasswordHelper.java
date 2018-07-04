@@ -9,10 +9,10 @@ import org.summary.model.User;
  */
 public class PasswordHelper {
 
-    private String algorithmName = "md5";
-    private final int hashIterations = 1024;
+    private static String algorithmName = "md5";
+    private static final int hashIterations = 1024;
 
-    public void encryptPassword(User user) {
+    public static void encryptPassword(User user) {
         // User对象包含最基本的字段Username和Password
         // 将用户的注册密码经过散列算法替换成一个不可逆的新密码保存进数据，散列过程使用了盐
         String  newPassword = new SimpleHash(algorithmName, user.getPassword(),

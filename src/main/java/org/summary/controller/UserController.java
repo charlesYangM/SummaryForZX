@@ -78,8 +78,7 @@ public class UserController {
             @RequestBody User user) {
         logger.info("register POST invoke........");
 
-        PasswordHelper passwordHelper = new PasswordHelper();
-        passwordHelper.encryptPassword(user);//将user的密码进行md5加密
+        PasswordHelper.encryptPassword(user);//将user的密码进行md5加密
         try {
             int isSign = this.userService.signup(user.getUsername(), user.getPassword());
             if (isSign == 0) {

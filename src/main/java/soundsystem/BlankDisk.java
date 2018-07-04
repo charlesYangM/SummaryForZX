@@ -45,4 +45,11 @@ public class BlankDisk implements CompactDisc {
                 ", tracks=" + tracks +
                 '}');
     }
+
+    @Override
+    public void playTrack(int trackNumber) {
+        System.out.println("play track " +
+                trackNumber + " , this track is " +
+                tracks.get(trackNumber));
+    }
 }

@@ -13,7 +13,7 @@
     <bean id="minstrel" class="mock.Minstrel">
         <constructor-arg value="#{T(System).out}" />
     </bean>
-    
+
     <aop:config>
         <aop:aspect ref = "minstrel">
             <aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))"/>
